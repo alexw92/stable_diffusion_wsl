@@ -25,7 +25,7 @@ conda install xformers -c xformers/label/dev
 
 Run script with ref to weights and given prompt
 ```
-python scripts/txt2img.py --prompt "tomato onion and garlic on a wooden surface" --ckpt /mnt/c/Users/Fistus/Downloads/v2-1_768-ema-pruned.ckpt --config configs/stable-diffusion/v2-inference-v.yaml --H 768 --W 768 --device cuda
+python scripts/txt2img.py --prompt "tomato onion and garlic on a wooden surface" --ckpt /path_to_checkpoint/v2-1_768-ema-pruned.ckpt --config configs/stable-diffusion/v2-inference-v.yaml --H 768 --W 768 --device cuda
 ```
 
 Dont forget ```--device cuda``` flag otherwise you will get ```RuntimeError: expected scalar type BFloat16 but found Float```
