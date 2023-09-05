@@ -32,3 +32,9 @@ python scripts/txt2img.py --prompt "tomato onion and garlic on a wooden surface"
 ```
 
 Dont forget ```--device cuda``` flag otherwise you will get ```RuntimeError: expected scalar type BFloat16 but found Float```
+
+Sometime an error is thrown for some prompts. Some user on Github found out why:
+
+```
+I discovered that this runtime issue stems from a shape mismatch between 'q' and 'k' in the cross-attention module. The batch sizes differ between 'q' and 'k' due to the unequal batch sizes between the cues and images. Kindly make sure that the number of your prompts is divisible by 'n_sample' solves the problem.
+```
